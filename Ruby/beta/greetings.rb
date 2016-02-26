@@ -23,5 +23,15 @@ message for every array entry
 
 def greeting_for_all_friends(friends)
     return nil if friends ==[] || friends == nil
-    friends.map{|e| "Hello, "+e}
+    friends.map{|e| "Hello, "+ e +"!"}
 end
+
+friends = nil
+puts "test with friends=nil: #{greeting_for_all_friends(friends)}"
+friends=[]
+puts "test with friends=[]: #{greeting_for_all_friends(friends)}"
+friends=["Rojo"]
+puts "test with friends=['Rojo']: #{greeting_for_all_friends(friends)}"
+friends =["uno","dos"]
+puts "test with friends=['uno','dos']: #{greeting_for_all_friends(friends)}"
+
