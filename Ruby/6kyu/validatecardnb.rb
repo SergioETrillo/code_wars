@@ -40,7 +40,7 @@ original credit card number is valid.
 def validate(n)
     card=n.to_s.split(//)
     card = ["0"]+card if card.length%2!= 0
-    print card
+    #print card
     evens = 0
     odds = 0
     card.each_index do |i|
@@ -54,3 +54,45 @@ def validate(n)
     (evens+odds)%10 == 0
 end
 puts validate(109)
+
+=begin
+
+def validate(n)
+ n.to_s
+   .split(//)
+   .map(&:to_i)
+   .reverse
+   .map
+   .with_index { |e,i| i.even? ? e:e*2  }
+   .reverse
+   .map { |x| x > 9 ? x-9 : x }
+   .reduce(&:+) % 10 == 0
+end
+
+
+
+def validate(n)
+array = n.to_s.scan(/\d/).map(&:to_i).reverse
+array.each_with_index.map{|x,i| i.even? ? x : x < 5 ? x*2 : (x*2)-9}.reverse.inject(&:+) % 10 == 0 ? true : false
+end
+
+
+def validate(n)
+  digits = n.to_s.chars.map(&:to_i)
+  digits.reverse.each_with_index.inject(0) { |sum, (digit, index)|
+    sum + (index.odd? && digit < 9 ? digit * 2 % 9 : digit)
+  } % 10 == 0
+end
+
+def validate(n)
+  n.to_s.chars.reverse.map(&:to_i)
+   .each_with_index.map { |n, i|
+     i.odd? ? n * 2 : n
+   }.map { |n|
+      n > 9 ? n - 9 : n
+   }.inject(0, :+) % 10 == 0
+end
+
+
+
+=end
