@@ -26,17 +26,6 @@ Fundamentals
 
 =end
 
-def tuple_u(u)
-    tuple = [2*u+1,3*u+1]
-end
-
-def root(n)
-    k = 1
-    k += 1 if 2**k < n
-    k
-end
-
-
 def dbl_linear(n)
       #k = Math.log2(n).to_i + 1
       ary = [1]
@@ -45,15 +34,44 @@ def dbl_linear(n)
           ary << 2 * ary[i-1] + 1
           #p ary
           ary << 3 * ary[i-1] + 1
-          #ary = ary.sort.uniq
+
           #p "iteracion: #{i} ary: #{ary}"
           
       end
-      
-      ary
+      ary.sort_by{|a| a}.uniq[n]
      
 end
 
 #p dbl_linear(10)
 p dbl_linear(20)
 #p dbl_linear(10)
+
+
+=begin
+
+
+def dbl_linear(n)
+  seq = [1]
+  i = 0
+  
+  while seq.last <= n**2
+    seq << (2*seq[i]+1) << (3*seq[i]+1)
+    i += 1 
+  end
+  seq.sort.uniq[n]
+end
+
+=end
+
+=begin
+
+def dbl_linear(n)
+    arr = [1]
+    for i in 0..n*5
+      arr.push(arr[i] * 2 + 1)
+      arr.push(arr[i] * 3 + 1) 
+    end
+   arr.uniq.sort[n]
+end
+
+=end
