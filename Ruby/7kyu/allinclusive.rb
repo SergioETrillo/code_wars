@@ -34,8 +34,24 @@ def contain_all_rots(strng, arr)
     rotations = [strng]
     ary_str = strng.chars
     size = ary_str.size
+    
     (size-1).times do
         rotations << ary_str.rotate!.join
     end
+    rotations.uniq!
     rotations & arr == rotations
 end
+
+
+
+
+
+=begin
+
+def contain_all_rots(str, arr)
+  str.length.times.map { |i| str.chars.rotate(i) }
+    .map(&:join)
+    .all? { |a| arr.include?(a) }
+end
+
+=end
