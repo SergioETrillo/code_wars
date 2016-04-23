@@ -10,6 +10,7 @@ For example:
 
 The array will contain a minimum of two elements.
 
+
 =end
 
 def between_extremes(numbers)
