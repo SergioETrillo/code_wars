@@ -10,6 +10,8 @@ http://www.rubycuts.com/enum-grep
 
 =end
 
+
+
 def grep list, regexp
   list.grep(regexp)
 end
