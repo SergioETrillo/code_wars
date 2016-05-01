@@ -10,6 +10,8 @@ http://www.rubycuts.com/enum-min-by
 
 =end
 
+
+
 def min_by list, &block
   list.min_by(&block)
 end
