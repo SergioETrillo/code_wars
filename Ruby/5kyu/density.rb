@@ -1,6 +1,6 @@
 =begin
 
-Description:
+Description: ------
 
 Don't Drink the Water
 
@@ -49,7 +49,7 @@ DENSITY = {
 def separate_liquids(glass)
   return glass if glass.empty?
   glass_width = glass.first.length
-  glass.flatten.sort_by { |a| DENSITY[a] }.each_slice(glass_width).to_a  
+  glass.flatten.sort_by { |a| DENSITY[a] }.each_slice(glass_width).to_a
 end
 
 =end
