@@ -1,6 +1,6 @@
 =begin
 
-Find the last element of a list.
+Find the last element of a list. ----
 
 Example:
 
@@ -17,7 +17,7 @@ arguments.
 # NOT COMPLETED
 
 def last(*args)
-  args[-1].is_a?(String) ? args[-1][-1] : args.flatten[-1]  
+  args[-1].is_a?(String) ? args[-1][-1] : args.flatten[-1]
 end
 
 =begin
