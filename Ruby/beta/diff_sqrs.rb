@@ -1,6 +1,7 @@
 =begin
 
 Description:
+------
 
 Find the difference between the sum of the squares of the first n natural numbers (1 <= n <= 100) and the square of their sum. For example, when n = 10:
 
@@ -23,7 +24,7 @@ FundamentalsData
 def difference_of_squares(x)
   square_of_sum = (1..x).to_a.reduce(0) {|sum, e| sum += e**2}
   sum_squared = (1..x).to_a.reduce(:+) ** 2
-  sum_squared - square_of_sum 
+  sum_squared - square_of_sum
 end
 
 
