@@ -43,21 +43,21 @@ For those who don't know the game, here are some information about rules and how
 
 
 def done_or_not(board)
-  
+
   invalid = "Try again!"
   valid = "Finished!"
 
   size = 9
   correct_sol = (1..9).to_a
-    
+
   size.times do |i|
     return invalid if board[i].sort != correct_sol
   end
-     
+
   size.times do |i|
     return invalid if board.transpose[i].sort != correct_sol
   end
-      
+
   size_subarray = Math.sqrt(size).to_i
   size_subarray.times do |i|
     aux = board[size_subarray*i...size_subarray*(i+1)]
