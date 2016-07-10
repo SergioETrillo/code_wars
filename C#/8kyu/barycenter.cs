@@ -37,8 +37,18 @@ public class Barycenter
   }
 }
 
-// Tests
+public class Program
+{
+  public static void Main()
+  {
+    double[] res;
+    res = Barycenter.BarTriang(new double[]{4,6}, new double[] {12,4}, new double[] {10,10});
+    Console.WriteLine($"Barycenter x: {res[0]}, Barycenter y: {res[1]}");
+  }
+}
 
+// Tests
+/*
 using System;
 using NUnit.Framework;
 
@@ -56,3 +66,4 @@ public static class BarycenterTests {
 }
 
 
+*/
