@@ -29,7 +29,7 @@ namespace PriceDraw
                 return "Not enough participants";
 
             // split st into an array
-            string[] Names = ProcessString(st);
+            string[] Names = st.Split(',');
             int[] WinningNumbers = new int[Names.Length];
 
             // calculate winning numbers
@@ -92,12 +92,6 @@ namespace PriceDraw
 
             return (total + name.Length)*position;
 
-        }
-
-        internal static string[] ProcessString(string st)
-        {
-            string[] names = st.Split(',');
-            return names;
         }
     }
 }

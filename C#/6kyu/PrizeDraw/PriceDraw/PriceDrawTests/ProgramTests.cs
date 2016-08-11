@@ -31,15 +31,6 @@ namespace PriceDraw.Tests
         }
 
         [TestMethod]
-        public void TestProcessString()
-        {
-            string st = "Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin";
-            string[] expected = { "Addison", "Jayden", "Sofia", "Michael", "Andrew", "Lily", "Benjamin" };
-            string[] actual = Rank.ProcessString(st);
-            CollectionAssert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
         public void BenjaminIsChosen()
         {
             string st = "Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin";
