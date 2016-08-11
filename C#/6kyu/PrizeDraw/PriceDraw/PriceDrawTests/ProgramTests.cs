@@ -11,8 +11,8 @@ namespace PriceDraw.Tests
     [TestClass()]
     public class ProgramTests
     {
-        [TestMethod()]
-        public void test1()
+        [TestMethod]
+        public void NoParticipantsTest()
         {
             string st = "";
             int[] we = new int[] { 4, 2, 1, 4, 3, 1, 2 };
@@ -21,6 +21,40 @@ namespace PriceDraw.Tests
 
         }
 
+        [TestMethod]
+        public void NisLessThanNbParticipants()
+        {
+            string st = "Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin";
+            int[] we = new int[] { 4, 2, 1, 4, 3, 1, 2 };
+            Assert.AreEqual("Not enough participants", Rank.NthRank(st, we, 8));
+
+        }
+
+        [TestMethod]
+        public void TestProcessString()
+        {
+            string st = "Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin";
+            string[] expected = { "Addison", "Jayden", "Sofia", "Michael", "Andrew", "Lily", "Benjamin" };
+            string[] actual = Rank.ProcessString(st);
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void BenjaminIsChosen()
+        {
+            string st = "Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin";
+            int[] we = new int[] {4, 2, 1, 4, 3, 1, 2};
+            Assert.AreEqual("Benjamin", Rank.NthRank(st, we, 4));
+
+        }
+
+        [TestMethod]
+        public void MatthewIsChosen()
+        {
+            string st = "Elijah,Chloe,Elizabeth,Matthew,Natalie,Jayden";
+            int[] we = new int[] { 1, 3, 5, 5, 3, 6 };
+            Assert.AreEqual("Matthew", Rank.NthRank(st, we, 2));
+        }
 
     }
 }
