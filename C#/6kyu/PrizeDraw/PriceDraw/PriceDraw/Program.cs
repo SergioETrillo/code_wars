@@ -44,8 +44,9 @@ namespace PriceDraw
             Dictionary<string, int> items = CreateDictionary(Names, WinningNumbers);
 
             // sort using LINQ
-            var sorted = items.OrderByDescending(p => p.Value)
-                               .ThenBy(p => p.Key).ToDictionary(p => p.Key, p => p.Value);
+            Dictionary<string, int> sorted = items.OrderByDescending(p => p.Value)
+                                                  .ThenBy(p => p.Key)
+                                                  .ToDictionary(p => p.Key, p => p.Value);
 
             // convert to array
             string[] SortedArray = new string[Names.Length];
